@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 利用規約チェッカー (デモ版)</title>
+    <style>
+        /* 基本スタイル */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        h1 { color: #444; text-align: center; }
+        
+        #terms-container { margin-bottom: 20px; }
+        #terms-url-input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; box-sizing: border-box; }
+        
+        /* ボタンのスタイル（デモ用） */
+        #analyze-button { display: block; width: 100%; padding: 12px; background-color: #28a745; /* デモなので緑色に変更 */ color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.2s; }
+        #analyze-button:hover { background-color: #218838; }
+        #analyze-button:disabled { background-color: #ccc; cursor: not-allowed; }
+        
+        .demo-note { text-align: center; font-size: 0.85em; color: #666; margin-top: 8px; }
+
+        #result-container { margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; min-height: 100px; }
+        hr { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+
+        /* 結果表示エリアのスタイル */
+        .evaluation-header { margin-bottom: 10px; }
+        .evaluation-header h2 { display: inline; margin-right: 10px; font-size: 1.5em; }
+        .risk-level { padding: 4px 12px; border-radius: 15px; color: white; font-weight: bold; }
+        .risk-高 { background-color: #dc3545; }
+        .risk-中 { background-color: #ffc107; color: #333; }
+        .risk-低 { background-color: #28a745; }
+        
+        .analysis-item { padding: 12px; border: 1px solid #e0e0e0; border-radius: 5px; margin-bottom: 10px; }
+        .analysis-item.safe { background-color: #f0fff4; border-left: 5px solid #28a745; }
+        .analysis-item.unsafe { border-left: 5px solid #dc3545; }
+        
+        details > summary { font-weight: bold; cursor: pointer; display: flex; align-items: center; }
+        details > summary::before { content: '▶'; margin-right: 8px; font-size: 0.8em; transition: transform 0.2s; }
+        details[open] > summary::before { transform: rotate(90deg); }
+        .details-content { padding-top: 15px; margin-top: 10px; border-top: 1px solid #eee; }
+        .issue-block { margin-bottom: 15px; }
+        .issue-block strong { display: block; margin-bottom: 5px; color: #555; }
+        .issue-block blockquote { margin: 0 0 10px 0; padding: 10px; background-color: #f8f8f8; border-left: 3px solid #ccc; font-size: 0.9em; }
+        .issue-block p { margin: 0; }
+    </style>
+</head>
+<body>
+    <h1>Gemini 利用規約チェッカー</h1>
+    
+    <div id="terms-container">
+        <label for="terms-url-input">分析したい利用規約のURLを入力してください:</label>
+        <input type="url" id="terms-url-input" 
+               value="https://policies.google.com/terms/embedded?hl=ja" 
+               placeholder="https://example.com/terms">
+    </div>
+    
+    <button id="analyze-button">分析を実行（デモモード）</button>
+    <p class="demo-note">※現在はGitHub公開用のデモモードです。APIキーを使用せず、サンプルの分析結果を表示します。</p>
+
+    <div id="result-container"><p>ここに分析結果が表示されます。</p></div>
+
+    <script>
+        const analyzeButton = document.getElementById('analyze-button');
+        const urlInput = document.getElementById('terms-url-input');
+        const resultContainer = document.getElementById('result-container');
+
+        analyzeButton.addEventListener('click', async () => {
+            const termsUrl = urlInput.value;
+            if (!termsUrl.trim()) { alert('URLを入力してください。'); return; }
+
+            analyzeButton.disabled = true;
+            analyzeButton.textContent = '分析中...';
+            // デモであることを意識したメッセージに変更
+            resultContainer.innerHTML = `<p>デモ分析を実行中です...（サンプルデータを取得しています）</p>`;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/analyze', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ terms_url: termsUrl }),
+                });
+
+                const data = await response.json();
+                if (!response.ok || data.error) { throw new Error(data.error || 'サーバーでエラーが発生しました。'); }
+
+                displayResults(data);
+
+            } catch (error) {
+                resultContainer.innerHTML = `<p style="color: red;">エラーが発生しました: ${error.message}</p>`;
+            } finally {
+                analyzeButton.disabled = false;
+                analyzeButton.textContent = '分析を実行（デモモード）';
+            }
+        });
+
+        function displayResults(data) {
+            let html = '';
+
+            if (data.overall_evaluation) {
+                const eval = data.overall_evaluation;
+                html += `
+                    <div class="evaluation-header">
+                        <h2>総合評価</h2>
+                        <span class="risk-level risk-${eval.risk_level.toLowerCase()}">${eval.risk_level}</span>
+                    </div>
+                    <p>${eval.reason.replace(/\n/g, '<br>')}</p>
+                    <hr>
+                `;
+            }
+            
+            if (data.detailed_analysis) {
+                data.detailed_analysis.forEach(item => {
+                    if (item.is_safe) {
+                        html += `<div class="analysis-item safe">✅ <strong>${item.category}</strong>: 特に懸念される点はありません。</div>`;
+                    } else {
+                        html += `
+                            <details class="analysis-item unsafe">
+                                <summary>⚠️ <strong>${item.category}</strong>: 要注意</summary>
+                                <div class="details-content">
+                                    <p><strong>【このカテゴリの要約】</strong><br>${item.summary.replace(/\n/g, '<br>')}</p>
+                        `;
+                        (item.issues || []).forEach(issue => {
+                            html += `
+                                <div class="issue-block">
+                                    <strong>該当条文:</strong>
+                                    <blockquote>${(issue.clause || '').replace(/\n/g, '<br>')}</blockquote>
+                                    <strong>問題点とリスク:</strong>
+                                    <p>${(issue.risk || '').replace(/\n/g, '<br>')}</p>
+                                </div>
+                            `;
+                        });
+                        html += `</div></details>`;
+                    }
+                });
+            }
+            
+            resultContainer.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
