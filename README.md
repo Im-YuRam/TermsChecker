@@ -8,33 +8,32 @@
 ### 🛠 Skills & Proficiency
 
 #### 💻 Development & Data Science
-| Tech | Proficiency | Note |
-| :--- | :--- | :--- |
-| <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" /> | ★★★ | メイン言語。バックエンドから分析まで使用 |
-| <img src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white" /> | ★★☆ | Webアプリのバックエンド構築が可能 |
-| <img src="https://img.shields.io/badge/-HTML%2FCSS-E34F26?style=flat-square&logo=html5&logoColor=white" /> | ★★☆ | 基本的なコーディング、AIを活用した実装 |
-| <img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" /> | ★★☆ | データベース設計・SQL操作 |
-| <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white" /> | ★☆☆ | 環境構築・コンテナの基本操作 |
-| <img src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" /> | ★☆☆ | モデルの学習・推論の実装 |
-| <img src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" /> | ★☆☆ | 基礎的なモデル構築 |
-| <img src="https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white" /> | ★★☆ | データ加工・分析 |
-| <img src="https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy&logoColor=white" /> | ★★☆ | 数値計算処理 |
-| <img src="https://img.shields.io/badge/-MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white" /> | ★☆☆ | 数値解析シミュレーション |
-| <img src="https://img.shields.io/badge/-Unity-000000?style=flat-square&logo=unity&logoColor=white" /> | ★★☆ | ゲーム制作・インタラクティブコンテンツ作成 |
+
+| Tech | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| :---: | :---: | :--- |
+| <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" width="100" /> | ★★★ | メイン言語。バックエンドから分析まで使用 |
+| <img src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white" width="100" /> | ★★☆ | Webアプリのバックエンド構築が可能 |
+| <img src="https://img.shields.io/badge/-HTML%2FCSS-E34F26?style=flat-square&logo=html5&logoColor=white" width="100" /> | ★★☆ | 基本的なコーディング、AIを活用した実装 |
+| <img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" width="100" /> | ★★☆ | データベース設計・SQL操作 |
+| <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white" width="100" /> | ★☆☆ | 環境構築・コンテナの基本操作 |
+| <img src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" width="100" /> | ★☆☆ | モデルの学習・推論の実装 |
+| <img src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" width="100" /> | ★☆☆ | 基礎的なモデル構築 |
+| <img src="https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white" width="100" /> | ★★☆ | データ加工・分析 |
+| <img src="https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy&logoColor=white" width="100" /> | ★★☆ | 数値計算処理 |
+| <img src="https://img.shields.io/badge/-MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white" width="100" /> | ★☆☆ | 数値解析シミュレーション |
+| <img src="https://img.shields.io/badge/-Unity-000000?style=flat-square&logo=unity&logoColor=white" width="100" /> | ★★☆ | ゲーム制作・コンテンツ作成 |
 
 #### 🎨 Creative & Design
-エンジニアリングに加え、デザイン・3Dモデリング・動画編集も可能です。
 
-| Tool | Proficiency | Note |
-| :--- | :--- | :--- |
-| <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" /> | ★★☆ | UI/UXデザインの作成 |
-| <img src="https://img.shields.io/badge/-Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" /> | ★★☆ | 画像加工・素材作成 |
-| <img src="https://img.shields.io/badge/-Illustrator-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" /> | ★★☆ | ベクター素材・アイコン作成 |
-| <img src="https://img.shields.io/badge/-Premiere_Pro-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" /> | ★★☆ | PR動画・紹介動画の編集 |
-| <img src="https://img.shields.io/badge/-Blender-E87D0D?style=flat-square&logo=blender&logoColor=white" /> | ★☆☆ | 3Dモデリングの基礎 |
-| <img src="https://img.shields.io/badge/-Maya-37A5CC?style=flat-square&logo=autodesk&logoColor=white" /> | ★☆☆ | 3Dアニメーション・モデリング |
-| <img src="https://img.shields.io/badge/-OBS_Studio-000000?style=flat-square&logo=obsstudio&logoColor=white" /> | ★★★ | 配信設定・録画環境構築 |
-
+| Tool | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| :---: | :---: | :--- |
+| <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" width="100" /> | ★★☆ | UI/UXデザインの作成 |
+| <img src="https://img.shields.io/badge/-Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" width="100" /> | ★★☆ | 画像加工・素材作成 |
+| <img src="https://img.shields.io/badge/-Illustrator-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" width="100" /> | ★★☆ | ベクター素材・アイコン作成 |
+| <img src="https://img.shields.io/badge/-Premiere_Pro-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" width="100" /> | ★★☆ | PR動画・紹介動画の編集 |
+| <img src="https://img.shields.io/badge/-Blender-E87D0D?style=flat-square&logo=blender&logoColor=white" width="100" /> | ★☆☆ | 3Dモデリングの基礎 |
+| <img src="https://img.shields.io/badge/-Maya-37A5CC?style=flat-square&logo=autodesk&logoColor=white" width="100" /> | ★☆☆ | 3Dアニメーション・モデリング |
+| <img src="https://img.shields.io/badge/-OBS_Studio-000000?style=flat-square&logo=obsstudio&logoColor=white" width="100" /> | ★★★ | 配信設定・録画環境構築 |
 ---
 
 ### 🚀 Featured Project
