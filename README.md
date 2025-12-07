@@ -24,17 +24,17 @@
 | <img src="https://img.shields.io/badge/-Unity-000000?style=flat-square&logo=unity&logoColor=white" width="110" /> | ★★☆ | ゲーム制作・コンテンツ作成 |
 
 #### 🎨 Creative & Design
+エンジニアリングに加え、デザイン・3Dモデリング・動画編集も可能です。
 
 | Tool | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | :---: | :---: | :--- |
-| <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" width="110" /> | ★★☆ | UI/UXデザインの作成 |
-| <img src="https://img.shields.io/badge/-Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" width="110" /> | ★★☆ | 画像加工・素材作成 |
-| <img src="https://img.shields.io/badge/-Illustrator-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" width="110" /> | ★★☆ | ベクター素材・アイコン作成 |
-| <img src="https://img.shields.io/badge/-Premiere_Pro-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" width="110" /> | ★★☆ | PR動画・紹介動画の編集 |
+| <img src="https://img.shields.io/badge/-Figma-191919?style=flat-square&logo=figma&logoColor=F24E1E" width="110" /> | ★★☆ | UI/UXデザインの作成 |
+| <img src="Adobe_Photoshop.png" height="25" alt="Photoshop" /> **Photoshop** | ★★☆ | 画像加工・素材作成 |
+| <img src="Adobe_illustlator.png" height="25" alt="Illustrator" /> **Illustrator** | ★★☆ | ベクター素材・アイコン作成 |
+| <img src="Adobe_PremierePro.png" height="25" alt="Premiere Pro" /> **Premiere Pro** | ★★☆ | PR動画・紹介動画の編集 |
 | <img src="https://img.shields.io/badge/-Blender-E87D0D?style=flat-square&logo=blender&logoColor=white" width="110" /> | ★☆☆ | 3Dモデリングの基礎 |
-| <img src="https://img.shields.io/badge/-Autodesk_(Maya)-0696D7?style=flat-square&logo=autodesk&logoColor=white" width="110" /> | ★☆☆ | 3Dアニメーション・モデリング |
+| <img src="maya.webp" height="25" alt="Maya" /> **Maya** | ★☆☆ | 3Dアニメーション・モデリング |
 | <img src="https://img.shields.io/badge/-OBS_Studio-000000?style=flat-square&logo=obsstudio&logoColor=white" width="110" /> | ★★★ | 配信設定・録画環境構築 |
----
 
 ### 🚀 Featured Project
 
