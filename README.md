@@ -28,8 +28,8 @@
 | <a href="https://www.docker.com/"><img src="https://skillicons.dev/icons?i=docker" /></a> | ★☆☆ | 環境構築・コンテナの基本操作 |
 | <a href="https://pytorch.org/"><img src="https://skillicons.dev/icons?i=pytorch" /></a> | ★☆☆ | モデルの学習・推論の実装 |
 | <a href="https://www.tensorflow.org/"><img src="https://skillicons.dev/icons?i=tensorflow" /></a> | ★☆☆ | 基礎的なモデル構築 |
-| <a href="https://pandas.pydata.org/"><img src="https://skillicons.dev/icons?i=pandas" /></a> | ★★☆ | データ加工・分析 |
-| <a href="https://numpy.org/"><img src="https://skillicons.dev/icons?i=numpy" /></a> | ★★☆ | 数値計算処理 |
+| <img src="pandas.jpg" width="48" height="48" alt="Pandas" /> | ★★☆ | データ加工・分析 |
+| <img src="numpy.jpg" width="48" height="48" alt="NumPy" /> | ★★☆ | 数値計算処理 |
 | <a href="https://jp.mathworks.com/products/matlab.html"><img src="https://skillicons.dev/icons?i=matlab" /></a> | ★☆☆ | 数値解析シミュレーション |
 | <a href="https://unity.com/"><img src="https://skillicons.dev/icons?i=unity" /></a> | ★★☆ | ゲーム制作・コンテンツ作成 |
 
