@@ -20,30 +20,30 @@
 
 | Tech | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | :---: | :---: | :--- |
-| <a href="https://python.org"><img src="https://skillicons.dev/icons?i=python" /></a> | ★★★ | メイン言語。バックエンドから分析まで使用 |
-| <a href="https://flask.palletsprojects.com/"><img src="https://skillicons.dev/icons?i=flask" /></a> | ★★☆ | Webアプリのバックエンド構築が可能 |
-| <a href="https://html.spec.whatwg.org/"><img src="https://skillicons.dev/icons?i=html" /></a> | ★★☆ | 基本的なコーディング |
-| <a href="https://www.w3.org/Style/CSS/"><img src="https://skillicons.dev/icons?i=css" /></a> | ★★☆ | デザイン調整・AIを活用した実装 |
-| <a href="https://www.mysql.com/"><img src="https://skillicons.dev/icons?i=mysql" /></a> | ★★☆ | データベース設計・SQL操作 |
-| <a href="https://www.docker.com/"><img src="https://skillicons.dev/icons?i=docker" /></a> | ★☆☆ | 環境構築・コンテナの基本操作 |
-| <a href="https://pytorch.org/"><img src="https://skillicons.dev/icons?i=pytorch" /></a> | ★☆☆ | モデルの学習・推論の実装 |
-| <a href="https://www.tensorflow.org/"><img src="https://skillicons.dev/icons?i=tensorflow" /></a> | ★☆☆ | 基礎的なモデル構築 |
-| <a href="https://pandas.pydata.org/"><img src="icon/pandas.png" width="48" height="48" alt="Pandas" /></a> | ★★☆ | データ加工・分析 |
-| <a href="https://numpy.org/"><img src="icon/numpy.png" width="48" height="48" alt="NumPy" /></a> | ★★☆ | 数値計算処理 |
-| <a href="https://jp.mathworks.com/products/matlab.html"><img src="https://skillicons.dev/icons?i=matlab" /></a> | ★☆☆ | 数値解析シミュレーション |
-| <a href="https://unity.com/"><img src="https://skillicons.dev/icons?i=unity" /></a> | ★★☆ | ゲーム制作・コンテンツ作成 |
+| <a href="https://python.org"><img src="https://skillicons.dev/icons?i=python" /></a> | ★★★★☆ | メイン言語。複雑すぎなければ自分でもコードを書けます。 |
+| <a href="https://flask.palletsprojects.com/"><img src="https://skillicons.dev/icons?i=flask" /></a> | ★☆☆☆☆ | 勉強中です。AIに今のところ任せながら作っています |
+| <a href="https://html.spec.whatwg.org/"><img src="https://skillicons.dev/icons?i=html" /></a> | ★★☆☆☆ | 基本的なコーディングと解読はできます。AIに原型を作ってもらって微調整しています。 |
+| <a href="https://www.w3.org/Style/CSS/"><img src="https://skillicons.dev/icons?i=css" /></a> | ★★☆☆☆ | HTMLと同じぐらいです。 |
+| <a href="https://www.mysql.com/"><img src="https://skillicons.dev/icons?i=mysql" /></a> | ★★☆☆☆ | 基本的なテーブルやビュー、データベースやユーザーの作成やデータの抽出はできます。 |
+| <a href="https://www.docker.com/"><img src="https://skillicons.dev/icons?i=docker" /></a> | ★☆☆☆☆ | 授業で軽く触ったぐらいです。勉強中です。 |
+| <a href="https://pytorch.org/"><img src="https://skillicons.dev/icons?i=pytorch" /></a> | ★★☆☆☆ | 主にtransformers使ってLLMチューニングする時に使ってます。 |
+| <a href="https://www.tensorflow.org/"><img src="https://skillicons.dev/icons?i=tensorflow" /></a> | ★★☆☆☆ | Pytorchと同じく主にtransformers使ってLLMチューニングする時に使ってます。 |
+| <a href="https://pandas.pydata.org/"><img src="icon/pandas.png" width="48" height="48" alt="Pandas" /></a> | ★★☆☆☆ | データの整形とかに使ってます。 |
+| <a href="https://numpy.org/"><img src="icon/numpy.png" width="48" height="48" alt="NumPy" /></a> | ★★☆☆☆ | Pandasと同じくデータの整形とかで使用します。 |
+| <a href="https://jp.mathworks.com/products/matlab.html"><img src="https://skillicons.dev/icons?i=matlab" /></a> | ★☆☆☆☆ | 授業で触ったぐらいです。 |
+| <a href="https://unity.com/"><img src="https://skillicons.dev/icons?i=unity" /></a> | ★★☆☆☆ | 簡単なゲームぐらいなら作ってスマホ等にデプロイするところまでできます。 |
 
 #### 🎨 Creative & Design
 
 | Tool | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | :---: | :---: | :--- |
-| <img src="https://skillicons.dev/icons?i=figma" /> | ★★☆ | UI/UXデザインの作成 |
-| <img src="https://skillicons.dev/icons?i=ps" /> | ★★☆ | 画像加工・素材作成 |
-| <img src="https://skillicons.dev/icons?i=ai" /> | ★★☆ | ベクター素材・アイコン作成 |
-| <img src="https://skillicons.dev/icons?i=pr" /> | ★★☆ | PR動画・紹介動画の編集 |
-| <img src="https://skillicons.dev/icons?i=blender" /> | ★☆☆ | 3Dモデリングの基礎 |
-| <img src="icon/maya.png" width="48" height="48" alt="Maya" /> | ★☆☆ | 3Dアニメーション・モデリング |
-| <img src="icon/obs.png" width="48" height="48" alt="OBS Studio" /> | ★★★ | 配信設定・録画環境構築 |
+| <img src="https://skillicons.dev/icons?i=figma" /> | ★★★☆☆ | オートレイアウトやコンポーネントの作成ぐらいまでならできます。 |
+| <img src="https://skillicons.dev/icons?i=ps" /> | ★★☆☆☆ | 簡単な画像加工ぐらいならできます。 |
+| <img src="https://skillicons.dev/icons?i=ai" /> | ★★☆☆☆ | 基本的な作成はできますが、最近はFigmaばかり使っています |
+| <img src="https://skillicons.dev/icons?i=pr" /> | ★★☆☆☆ | 素材があるのであれば動画を作ることができます。 |
+| <img src="https://skillicons.dev/icons?i=blender" /> | ★☆☆☆☆ | 授業で触ったことがあるぐらいです |
+| <img src="icon/maya.png" width="48" height="48" alt="Maya" /> | ★☆☆☆☆ | 授業で触ったことがあるぐらいです |
+| <img src="icon/obs.png" width="48" height="48" alt="OBS Studio" /> | ★★★☆☆ | YoutubeやTwitchで配信するぐらいまでならできます |
 ### 🚀 Featured Project
 
 #### [TermsChecker - 利用規約「危険条項」自動検知アプリ](https://github.com/Im-YuRam/TermsChecker)
