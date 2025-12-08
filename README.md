@@ -20,29 +20,29 @@
 
 | Tech | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | :---: | :---: | :--- |
-| <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" width="110" /> | ★★★ | メイン言語。バックエンドから分析まで使用 |
-| <img src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white" width="110" /> | ★★☆ | Webアプリのバックエンド構築が可能 |
-| <img src="https://img.shields.io/badge/-HTML%2FCSS-E34F26?style=flat-square&logo=html5&logoColor=white" width="110" /> | ★★☆ | 基本的なコーディング、AIを活用した実装 |
-| <img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" width="110" /> | ★★☆ | データベース設計・SQL操作 |
-| <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white" width="110" /> | ★☆☆ | 環境構築・コンテナの基本操作 |
-| <img src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" width="110" /> | ★☆☆ | モデルの学習・推論の実装 |
-| <img src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" width="110" /> | ★☆☆ | 基礎的なモデル構築 |
-| <img src="https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white" width="110" /> | ★★☆ | データ加工・分析 |
-| <img src="https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy&logoColor=white" width="110" /> | ★★☆ | 数値計算処理 |
-| <img src="https://img.shields.io/badge/-MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white" width="110" /> | ★☆☆ | 数値解析シミュレーション |
-| <img src="https://img.shields.io/badge/-Unity-000000?style=flat-square&logo=unity&logoColor=white" width="110" /> | ★★☆ | ゲーム制作・コンテンツ作成 |
+| <a href="https://python.org"><img src="https://skillicons.dev/icons?i=python" /></a> | ★★★ | メイン言語。バックエンドから分析まで使用 |
+| <a href="https://flask.palletsprojects.com/"><img src="https://skillicons.dev/icons?i=flask" /></a> | ★★☆ | Webアプリのバックエンド構築が可能 |
+| <a href="https://html.spec.whatwg.org/"><img src="https://skillicons.dev/icons?i=html,css" /></a> | ★★☆ | 基本的なコーディング、AIを活用した実装 |
+| <a href="https://www.mysql.com/"><img src="https://skillicons.dev/icons?i=mysql" /></a> | ★★☆ | データベース設計・SQL操作 |
+| <a href="https://www.docker.com/"><img src="https://skillicons.dev/icons?i=docker" /></a> | ★☆☆ | 環境構築・コンテナの基本操作 |
+| <a href="https://pytorch.org/"><img src="https://skillicons.dev/icons?i=pytorch" /></a> | ★☆☆ | モデルの学習・推論の実装 |
+| <a href="https://www.tensorflow.org/"><img src="https://skillicons.dev/icons?i=tensorflow" /></a> | ★☆☆ | 基礎的なモデル構築 |
+| <a href="https://pandas.pydata.org/"><img src="https://skillicons.dev/icons?i=pandas" /></a> | ★★☆ | データ加工・分析 |
+| <a href="https://numpy.org/"><img src="https://skillicons.dev/icons?i=numpy" /></a> | ★★☆ | 数値計算処理 |
+| <a href="https://jp.mathworks.com/products/matlab.html"><img src="https://skillicons.dev/icons?i=matlab" /></a> | ★☆☆ | 数値解析シミュレーション |
+| <a href="https://unity.com/"><img src="https://skillicons.dev/icons?i=unity" /></a> | ★★☆ | ゲーム制作・コンテンツ作成 |
 
 #### 🎨 Creative & Design
 
 | Tool | Proficiency | Note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | :---: | :---: | :--- |
-| <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" width="110" /> | ★★☆ | UI/UXデザインの作成 |
-| <img src="https://img.shields.io/badge/-Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" width="110" /> | ★★☆ | 画像加工・素材作成 |
-| <img src="https://img.shields.io/badge/-Illustrator-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" width="110" /> | ★★☆ | ベクター素材・アイコン作成 |
-| <img src="https://img.shields.io/badge/-Premiere_Pro-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" width="110" /> | ★★☆ | PR動画・紹介動画の編集 |
-| <img src="https://img.shields.io/badge/-Blender-E87D0D?style=flat-square&logo=blender&logoColor=white" width="110" /> | ★☆☆ | 3Dモデリングの基礎 |
-| <img src="https://img.shields.io/badge/-Autodesk_(Maya)-0696D7?style=flat-square&logo=autodesk&logoColor=white" width="110" /> | ★☆☆ | 3Dアニメーション・モデリング |
-| <img src="https://img.shields.io/badge/-OBS_Studio-000000?style=flat-square&logo=obsstudio&logoColor=white" width="110" /> | ★★★ | 配信設定・録画環境構築 |
+| <img src="https://skillicons.dev/icons?i=figma" /> | ★★☆ | UI/UXデザインの作成 |
+| <img src="https://skillicons.dev/icons?i=ps" /> | ★★☆ | 画像加工・素材作成 |
+| <img src="https://skillicons.dev/icons?i=ai" /> | ★★☆ | ベクター素材・アイコン作成 |
+| <img src="https://skillicons.dev/icons?i=pr" /> | ★★☆ | PR動画・紹介動画の編集 |
+| <img src="https://skillicons.dev/icons?i=blender" /> | ★☆☆ | 3Dモデリングの基礎 |
+| <img src="https://skillicons.dev/icons?i=maya" /> | ★☆☆ | 3Dアニメーション・モデリング |
+| <img src="https://skillicons.dev/icons?i=obs" /> | ★★★ | 配信設定・録画環境構築 |
 
 ### 🚀 Featured Project
 
