@@ -26,7 +26,7 @@
 | <a href="https://www.w3.org/Style/CSS/"><img src="https://skillicons.dev/icons?i=css" /></a> | ★★☆☆☆ | HTMLと同じぐらいです。 |
 | <a href="https://www.mysql.com/"><img src="https://skillicons.dev/icons?i=mysql" /></a> | ★★☆☆☆ | 基本的なテーブルやビュー、データベースやユーザーの作成やデータの抽出はできます。 |
 | <a href="https://www.docker.com/"><img src="https://skillicons.dev/icons?i=docker" /></a> | ★☆☆☆☆ | 授業で軽く触ったぐらいです。勉強中です。 |
-| <a href="https://huggingface.co/docs/transformers/index"><img src="icon/hf-logo.png" /></a> | ★★★☆☆ | モデルの利用・ファインチューニングする時に使っています。 |
+| <a href="https://huggingface.co/docs/transformers/index"><img src="icon/hf-logo.png" width="48" height="48" alt="hf" /></a> | ★★★☆☆ | モデルの利用・ファインチューニングする時に使っています。 |
 | <a href="https://pytorch.org/"><img src="https://skillicons.dev/icons?i=pytorch" /></a> | ★★☆☆☆ | 主にtransformers使ってLLMチューニングする時に使ってます。 |
 | <a href="https://www.tensorflow.org/"><img src="https://skillicons.dev/icons?i=tensorflow" /></a> | ★★☆☆☆ | Pytorchと同じく主にtransformers使ってLLMチューニングする時に使ってます。 |
 | <a href="https://pandas.pydata.org/"><img src="icon/pandas.png" width="48" height="48" alt="Pandas" /></a> | ★★☆☆☆ | データの整形とかに使ってます。 |
