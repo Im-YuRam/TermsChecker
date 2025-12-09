@@ -2,7 +2,7 @@
 
 利用規約のURLを入力するだけで、生成AIがその内容を解析し、ユーザーにとって不利な条項や注意すべき点を自動で要約・警告するWebアプリケーションです。
 
-| <img src="images/demo_top.png" width="400" alt="トップ画面"> |
+| <img src="images/demo-top.png" width="400" alt="トップ画面"> |
 
 ## 🚀 背景・目的
 
@@ -11,7 +11,7 @@
 本アプリは、**「専門知識がないユーザーでも、瞬時にリスクを理解し、安全にサービスを利用できること」** を目的に開発しました。
 
 ## ✨ 主な機能
-| <img src="images/demo_kekka.png" width="400" alt="分析結果"> |
+| <img src="images/demo-kekka.png" width="400" alt="分析結果"> |
 
 * **URLから自動解析**: URLを入力するだけで、`trafilatura` を使用して本文を高精度に抽出します。
 * **6つのカテゴリでリスク評価**: 以下の観点でAIが条項を分類・評価します。
