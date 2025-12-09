@@ -1,53 +1,82 @@
-# TermsChecker - 利用規約の「危険な条項」自動検知アプリ
+# 🛡️ TermsChecker - 利用規約「危険条項」自動検知アプリ
 
 利用規約のURLを入力するだけで、生成AIがその内容を解析し、ユーザーにとって不利な条項や注意すべき点を自動で要約・警告するWebアプリケーションです。
 
-## 🚀 背景・目的 
+| <img src="images/demo_top.png" width="400" alt="トップ画面"> |
+
+## 🚀 背景・目的
 
 多くのWebサービスやアプリで「利用規約」への同意が求められますが、文章が膨大であるため、大半のユーザーは熟読せずに同意しています。しかし、その中には個人情報の扱いや不当な免責事項など、ユーザーにとってリスクのある内容が含まれている場合があります。
 
 本アプリは、**「専門知識がないユーザーでも、瞬時にリスクを理解し、安全にサービスを利用できること」** を目的に開発しました。
 
-## 🛠 技術スタック 
+## ✨ 主な機能
+| <img src="images/demo_kekka.png" width="400" alt="分析結果"> |
 
-* **Language:** Python 3.11.5
-* **Framework:** Flask
-* **AI Model:** Google Gemini API (Gemini 1.5 Flash)
-* **Frontend:** HTML, CSS (Jinja2)
-* **Tools:** Git, GitHub
+* **URLから自動解析**: URLを入力するだけで、`trafilatura` を使用して本文を高精度に抽出します。
+* **6つのカテゴリでリスク評価**: 以下の観点でAIが条項を分類・評価します。
+    1.  個人情報の取り扱い
+    2.  免責事項
+    3.  規約の変更
+    4.  禁止事項とペナルティ
+    5.  知的財産権
+    6.  その他
+* **高速な並列処理**: 長文の規約を分割し、マルチスレッドで並列にAI分析にかけることで待ち時間を短縮しています。
+* **デモモード搭載**: APIキーがない環境でも、Google利用規約を対象としたデモ分析を即座に試すことができます。
 
-## 💡 こだわった点・開発エピソード 
+
+## 🛠 技術スタック
+
+* **Backend:** Python 3.11+, Flask
+* **AI Model:** Google Gemini API (Gemini 2.5 Flash)
+* **Scraping:** Trafilatura 
+* **Frontend:** Vanilla JS, HTML5, CSS3 
+* **Concurrency:** Python `concurrent.futures` 
+
+
+
+  ## 💡 こだわった点・開発エピソード
 
 **【モデル選定のピボットと最適化】**
-開発当初は、日本語性能に定評のあるLLM「Swallow-7b」を、利用規約データセットでファインチューニングして使用する計画でした。
-しかし、開発を進める中で「学習リソース不足による納期の遅れ」と「ローカル環境での推論速度の遅さ」という課題に直面しました。
+開発当初は、ローカルLLM「Swallow-7b」のファインチューニングを計画していましたが、「推論速度」と「リソース」の課題に直面しました。そこで、ユーザー体験（UX）を最優先するために **Gemini 1.5 Flash API** へ移行。さらに、長文規約を扱うためにテキストをチャンク分割し、**並列処理（ThreadPoolExecutor）** でAPIを叩くことで、解析時間を大幅に短縮しました。
 
-そこで、プロジェクトの最優先事項を「期限内に快適なユーザー体験（UX）を提供するWebアプリとして完成させること」に再定義し、**Gemini API (Flashモデル)** への移行を決断しました。これにより、リアルタイムに近い高速な解析と高い要約精度を実現しました。
+**【セキュリティとユーザビリティの両立】**
+APIキーをコードに含めない設計（`.env`管理）を徹底しつつ、キーを持たないユーザーでもアプリの挙動を確認できるよう、自動でモックデータを返す「デモモード」を実装しました。フロントエンドでは、解析状況がわかるプログレスリングを実装し、待ち時間のストレス軽減を図っています。
 
-**【セキュリティへの配慮】**
-GitHubでの公開にあたり、APIキーをコードに含めない設計にしています。APIキーが設定されていない環境でも動作確認ができるよう、ダミーデータを返す「デモモード」を実装しました。
+## 📦 インストールと実行方法
 
-## 📦 インストールと実行方法 
-
-### 前提条件 
+### 前提条件
 * Python 3.8 以上
 * Google Gemini API Key（デモモードで動かす場合は不要）
 
 ### 手順
-1. リポジトリをクローンします
-   ```bash
-   git clone [https://github.com/Im-YuRam/TermsChecker.git](https://github.com/Im-YuRam/TermsChecker.git)
-   cd TermsChecker
 
+1.  **リポジトリをクローン**
+    ```bash
+    git clone [https://github.com/Im-YuRam/TermsChecker.git](https://github.com/Im-YuRam/TermsChecker.git)
+    cd TermsChecker
+    ```
 
-2. 依存ライブラリをインストールします
-   ```Bash
-   pip install -r requirements.txt
-   
-3. 環境変数を設定します .env ファイルを作成し、APIキーを設定してください。設定しない場合は自動的にデモモードで起動します。
-   ```Bash
-   GEMINI_API_KEY=your_api_key_here
-4. アプリを起動します ブラウザで http://127.0.0.1:5000 にアクセスしてください。
-   ```Bash
-   python app.py
+2.  **依存ライブラリをインストール**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
+3.  **環境変数を設定**
+    `backend` ディレクトリ内に `.env` ファイルを作成し、APIキーを設定してください。
+    （設定しない場合は、自動的にデモモードで起動します）
+    ```text
+    # backend/.env
+    GEMINI_API_KEY=your_api_key_here
+    ```
+
+4.  **バックエンドを起動**
+    ```bash
+    cd backend
+    python app.py
+    ```
+    サーバーが `http://127.0.0.1:5000` で起動します。
+
+5.  **アプリを利用する**
+    `frontend/index.html` をブラウザで開いてください。
+    URLを入力して「分析を実行」ボタンを押すと解析が始まります。
