@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 利用規約チェッカー</title>
+    <style>
+        :root {
+            --bg-color: #242938; 
+            --card-bg: #2f364a;
+            --text-main: #e8eaed;
+            --text-muted: #9aa0a6;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: #3d455c;
+            --risk-high: #ef4444;
+            --risk-med: #f59e0b;
+            --risk-low: #10b981;
+            --progress-size: 140px;
+            --progress-bar-width: 10px;
+            --circle-circumference: calc( (var(--progress-size) - var(--progress-bar-width) * 2) * 3.14159 );
+        }
+
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: var(--text-main); background-color: var(--bg-color); max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #fff; text-align: center; margin-bottom: 30px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+        .card { background-color: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        label { display: block; margin-bottom: 10px; color: var(--text-main); font-weight: 500; }
+        
+        #terms-url-input { width: 100%; padding: 14px; background-color: #1e2330; border: 1px solid var(--border); border-radius: 8px; color: #fff; font-size: 16px; box-sizing: border-box; transition: border-color 0.2s; }
+        #terms-url-input:focus { outline: none; border-color: var(--accent); }
+
+        #analyze-button { display: block; width: 100%; padding: 14px; background-color: var(--accent); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.2s; margin-top: 20px; }
+        #analyze-button:hover { background-color: var(--accent-hover); }
+        #analyze-button:disabled { background-color: #4b5563; cursor: not-allowed; opacity: 0.7; }
+
+        #result-container { min-height: 100px; }
+        hr { border: none; border-top: 1px solid var(--border); margin: 25px 0; }
+
+        /* ガイド画面スタイル */
+        .guide-section h3 { margin-top: 0; color: #fff; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+        .guide-steps { margin-bottom: 30px; padding-left: 20px; color: var(--text-muted); }
+        .guide-steps li { margin-bottom: 8px; }
+        
+        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .category-grid { grid-template-columns: 1fr; } }
+
+        .cat-card { background-color: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 8px; padding: 15px; }
+        .cat-card h4 { margin: 0 0 8px 0; color: var(--accent); font-size: 1em; }
+        .cat-card p { margin: 0; font-size: 0.85em; color: var(--text-muted); line-height: 1.5; }
+
+        /* 評価ヘッダー */
+        .evaluation-header { display: flex; align-items: center; margin-bottom: 15px; flex-wrap: wrap; }
+        .evaluation-header h2 { margin: 0 15px 0 0; font-size: 1.5em; color: #fff; }
+        
+        .risk-badge { padding: 4px 12px; border-radius: 20px; color: #fff; font-weight: bold; font-size: 0.9em; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .risk-高 { background-color: var(--risk-high); }
+        .risk-中 { background-color: var(--risk-med); color: #000; }
+        .risk-低 { background-color: var(--risk-low); }
+
+        /* デモバッジ */
+        .demo-mode-badge {
+            background-color: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.5em; vertical-align: middle;
+            display: none; 
+        }
+
+        .analysis-item { padding: 15px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 15px; background-color: rgba(255, 255, 255, 0.02); }
+        .analysis-item.safe { border-left: 4px solid var(--risk-low); }
+        .analysis-item.unsafe { border-left: 4px solid var(--risk-high); }
+
+        details > summary { font-weight: bold; cursor: pointer; list-style: none; display: flex; align-items: center; color: var(--text-main); padding: 5px 0; }
+        details > summary::-webkit-details-marker { display: none; }
+        details > summary::before { content: '▶'; margin-right: 10px; font-size: 0.8em; color: var(--text-muted); transition: transform 0.2s; }
+        details[open] > summary::before { transform: rotate(90deg); }
+        .details-content { padding-top: 15px; margin-top: 10px; border-top: 1px solid var(--border); color: var(--text-muted); }
+
+        .issue-block { background-color: rgba(0, 0, 0, 0.2); padding: 15px; margin-top: 15px; border-radius: 6px; border-left: 3px solid #555; }
+        .issue-block strong { color: #d1d5db; display: block; margin-bottom: 5px; font-size: 0.9em; }
+        .issue-block blockquote { margin: 0 0 10px 0; padding: 8px; background-color: rgba(255, 255, 255, 0.05); color: #cbd5e1; font-style: italic; border-radius: 4px; }
+        .issue-block p { margin: 0; color: #e8eaed; }
+
+        /* ローディング */
+        #loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(20, 25, 35, 0.95); z-index: 9999; display: none; flex-direction: column; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
+        .progress-container { position: relative; width: var(--progress-size); height: var(--progress-size); margin-bottom: 20px; }
+        .progress-ring { transform: rotate(-90deg); transform-origin: 50% 50%; }
+        .progress-ring__circle-bg { fill: none; stroke: rgba(255, 255, 255, 0.1); stroke-width: var(--progress-bar-width); }
+        .progress-ring__circle { fill: none; stroke: var(--accent); stroke-width: var(--progress-bar-width); stroke-linecap: round; stroke-dasharray: var(--circle-circumference); stroke-dashoffset: var(--circle-circumference); transition: stroke-dashoffset 0.5s ease-in-out; filter: drop-shadow(0 0 8px var(--accent)); }
+        .progress-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5em; font-weight: bold; color: #fff; }
+        .loading-message { color: #fff; font-size: 1.2em; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 5px; text-align: center; }
+        .loading-sub-message { color: var(--text-muted); font-size: 0.9em; text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="progress-container">
+            <svg class="progress-ring" width="140" height="140">
+                <circle class="progress-ring__circle-bg" stroke="white" stroke-width="10" fill="transparent" r="65" cx="70" cy="70"/>
+                <circle class="progress-ring__circle" stroke="blue" stroke-width="10" fill="transparent" r="65" cx="70" cy="70"/>
+            </svg>
+            <div class="progress-text" id="progress-percent">0%</div>
+        </div>
+        <div>
+            <div class="loading-message" id="loading-text">Initializing...</div>
+            <div class="loading-sub-message">処理には1分程度かかる場合があります</div>
+        </div>
+    </div>
+
+    <h1>🛡️ Gemini 利用規約チェッカー <span id="demo-badge" class="demo-mode-badge">DEMO MODE</span></h1>
+    
+    <div class="card" id="terms-container">
+        <label for="terms-url-input">分析したい利用規約のURLを入力:</label>
+        <input type="url" id="terms-url-input" placeholder="https://example.com/policy/terms">
+        <button id="analyze-button">分析を実行</button>
+    </div>
+
+    <div class="card" id="result-container">
+        <div class="guide-section">
+            <h3>📝 使い方は簡単です</h3>
+            <ol class="guide-steps">
+                <li>分析したい利用規約ページのURLを上のフォームに入力します。</li>
+                <li>「分析を実行」ボタンをクリックします。</li>
+                <li>AIが条文を読み込み、自動的にリスクを判定するのを待ちます。</li>
+            </ol>
+
+            <h3>🔍 分析・評価する6つのポイント</h3>
+            <div class="category-grid">
+                <div class="cat-card"><h4>1. 個人情報の取り扱い</h4><p>収集データの目的外利用や、第三者提供の範囲が不明確でないかチェックします。</p></div>
+                <div class="cat-card"><h4>2. 免責事項</h4><p>運営側の責任を過度に免除し、ユーザーに不当な不利益を与える条項がないか確認します。</p></div>
+                <div class="cat-card"><h4>3. 規約の変更</h4><p>ユーザーへの事前の通知なく、運営側が勝手にルールを変更できる危険性がないか見ます。</p></div>
+                <div class="cat-card"><h4>4. 禁止事項とペナルティ</h4><p>禁止行為の定義が曖昧だったり、違反時のアカウント停止措置などが厳しすぎないか評価します。</p></div>
+                <div class="cat-card"><h4>5. 知的財産権</h4><p>ユーザーが投稿したコンテンツの権利（著作権など）を運営側が不当に奪う条項がないか探します。</p></div>
+                <div class="cat-card"><h4>6. その他</h4><p>準拠法、裁判管轄、未成年者の利用制限など、その他の法的なリスク要因を分析します。</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const analyzeButton = document.getElementById('analyze-button');
+        const urlInput = document.getElementById('terms-url-input');
+        const resultContainer = document.getElementById('result-container');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const loadingText = document.getElementById('loading-text');
+        const progressPercent = document.getElementById('progress-percent');
+        const progressCircle = document.querySelector('.progress-ring__circle');
+        const demoBadge = document.getElementById('demo-badge');
+
+        const radius = 65;
+        const circumference = radius * 2 * Math.PI;
+        
+        // デモモード管理フラグ
+        let isDemoMode = false;
+
+        // ページ読み込み時にサーバーの状態を確認
+        window.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/status');
+                const status = await response.json();
+                
+                if (status.is_demo) {
+                    console.log("Running in Demo Mode");
+                    isDemoMode = true;
+                    
+
+                    demoBadge.style.display = 'inline-block';
+                    
+
+                    if (status.default_url) {
+                        urlInput.value = status.default_url;
+                    }
+                    
+
+                    analyzeButton.textContent = 'デモモードで分析を実行';
+                }
+            } catch (e) {
+                console.error("Status check failed:", e);
+            }
+        });
+
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100 * circumference);
+            progressCircle.style.strokeDashoffset = offset;
+            progressPercent.textContent = `${percent}%`;
+        }
+
+        analyzeButton.addEventListener('click', async () => {
+            const termsUrl = urlInput.value;
+            if (!termsUrl.trim()) { alert('URLを入力してください。'); return; }
+
+            analyzeButton.disabled = true;
+
+            analyzeButton.textContent = '分析中...'; 
+            
+            loadingOverlay.style.display = 'flex';
+            setProgress(0);
+            
+            const steps = [
+                { msg: "サイトにアクセス中...", percent: 10 },
+                { msg: "テキストを抽出・分割中...", percent: 30 },
+                { msg: "AIが条項を並列分析中...", percent: 50 },
+                { msg: "分析結果を統合中...", percent: 80 },
+                { msg: "最終レポートを生成中...", percent: 90 }
+            ];
+            
+            let currentStep = 0;
+            loadingText.textContent = steps[0].msg;
+            setProgress(steps[0].percent);
+
+            const progressInterval = setInterval(() => {
+                currentStep++;
+                if (currentStep < steps.length) {
+                    loadingText.textContent = steps[currentStep].msg;
+                    setProgress(steps[currentStep].percent);
+                }
+            }, 3000); 
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/analyze', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ terms_url: termsUrl }),
+                });
+
+                const data = await response.json();
+                
+                if (!response.ok || data.error) {
+                    throw new Error(data.error || 'サーバーエラーが発生しました。');
+                }
+
+                clearInterval(progressInterval);
+                loadingText.textContent = "分析完了！";
+                setProgress(100);
+                
+                setTimeout(() => {
+                     displayResults(data);
+                     loadingOverlay.style.display = 'none';
+                }, 800);
+
+            } catch (error) {
+                clearInterval(progressInterval);
+                loadingOverlay.style.display = 'none';
+                resultContainer.innerHTML = `
+                    <div style="color: var(--risk-high); text-align: center; padding: 20px;">
+                        <h3 style="margin-top:0">❌ エラーが発生しました</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            } finally {
+                analyzeButton.disabled = false;
+                // 処理終了後、デモモードならボタンの文字を元に戻す
+                analyzeButton.textContent = isDemoMode ? 'デモモードで分析を実行' : '分析を実行';
+            }
+        });
+
+        function displayResults(data) {
+            let html = '';
+            
+            const demoBadgeHtml = data.is_demo ? '<span class="demo-mode-badge" style="display:inline-block; margin-left:10px;">デモデータ表示中</span>' : '';
+
+            if (data.overall_evaluation) {
+                const eval = data.overall_evaluation;
+                html += `
+                    <div class="evaluation-header">
+                        <h2>総合評価</h2>
+                        <span class="risk-badge risk-${eval.risk_level}">${eval.risk_level}</span>
+                        ${demoBadgeHtml}
+                    </div>
+                    <p style="color: var(--text-main);">${eval.reason.replace(/\n/g, '<br>')}</p>
+                    <hr>
+                `;
+            }
+            if (data.detailed_analysis) {
+                data.detailed_analysis.forEach(item => {
+                    if (item.is_safe) {
+                        html += `
+                            <div class="analysis-item safe">
+                                ✅ <strong>${item.category}</strong><br>
+                                <span style="font-size: 0.9em; color: var(--text-muted);">特に懸念される点はありません。</span>
+                            </div>`;
+                    } else {
+                        html += `
+                            <details class="analysis-item unsafe">
+                                <summary>⚠️ <strong>${item.category}</strong></summary>
+                                <div class="details-content">
+                                    <p style="margin-bottom: 15px;">${item.summary.replace(/\n/g, '<br>')}</p>
+                        `;
+                        (item.issues || []).forEach(issue => {
+                            html += `
+                                <div class="issue-block">
+                                    <strong>該当条文:</strong>
+                                    <blockquote>${(issue.clause || '').replace(/\n/g, '<br>')}</blockquote>
+                                    <strong>リスク解説:</strong>
+                                    <p>${(issue.risk || '').replace(/\n/g, '<br>')}</p>
+                                </div>
+                            `;
+                        });
+                        html += `</div></details>`;
+                    }
+                });
+            }
+            resultContainer.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
